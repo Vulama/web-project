@@ -40,14 +40,10 @@
             <% } %>
             <div>
                 <p style="float: left; margin-left: 5%;"><%= comm.owner %> </p>
-                <button type="button" style="float: right; margin-right: 5%; margin-top: 1%;" onclick=<%="deleteMsg(" + comm.id + ')' %>>delete</button>
-                <script>
-                    function deleteMsg(id){
-                        alert(id)
-                    }
-                </script>
+                <a href=<%='/utakmica/'+ utakmica.id + "?del=" +  comm.id %>   style="float: right; margin-right: 5%; margin-top: 1%;">Delete</a>
             </div>
             <h2 style="text-align: center; margin-right: 10%; margin-left: 10%;"><%= comm.text %> </h2>
+            
             </div>
         <% } %>
         <hr></hr>
