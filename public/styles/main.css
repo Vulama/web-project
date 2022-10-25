@@ -4,7 +4,11 @@ h1 {
 
 .utakmica{
     padding-top: 0.2%;
-    padding-bottom:  0.2%;
+    padding-bottom:  1%;
     margin-bottom: 0.5%;
 }
 
+.column {
+    float: left;
+    margin-left: 5%;
+  }

@@ -38,10 +38,11 @@
             <% } else { %>
                 <div style="background-color: beige" class="utakmica">
             <% } %>
-            <div>
-                <p style="float: left; margin-left: 5%;"><%= comm.owner %> </p>
-                <a href=<%='/utakmica/'+ utakmica.id + "?del=" +  comm.id %>   style="float: right; margin-right: 5%; margin-top: 1%;">Delete</a>
+            <div class="column">
+                <p><%= comm.owner %> </p>
+                <p><%= comm.date %> </p>
             </div>
+            <a href=<%='/utakmica/'+ utakmica.id + "?del=" +  comm.id %>   style="float: right; margin-right: 5%; margin-top: 1%;">Delete</a>
             <h2 style="text-align: center; margin-right: 10%; margin-left: 10%;"><%= comm.text %> </h2>
             
             </div>

@@ -1,3 +1,6 @@
+var date = new Date();
+var dateLabel = `${date.getDay()-1}.${date.getMonth()}.${date.getFullYear()}`
+
 global.data = { 
     utakmice:[
         { 
@@ -13,18 +16,21 @@ global.data = {
                     text: "Dinamo je najjaci",
                     owner: "xxx",
                     ownerAddress: "xxx@gmail.com",
+                    date: dateLabel,
                 },
                 {
                     id: 2,
                     text: "Ma nije",
                     owner: "xxx",
                     ownerAddress: "xxx@gmail.com",
+                    date: dateLabel,
                 },
                 {
                     id: 3,
                     text: "Jeee",
                     owner: "xxx",
                     ownerAddress: "xxx@gmail.com",
+                    date: dateLabel,
                 },
             ]
         }, 
@@ -41,6 +47,7 @@ global.data = {
                     text: "Dinamo je najjaci",
                     owner: "xxx",
                     ownerAddress: "xxx@gmail.com",
+                    date: dateLabel,
                 },
             ],
         }, 
@@ -66,6 +73,7 @@ global.data = {
                     text: "Dinamo je najjaci",
                     owner: "xxx",
                     ownerAddress: "xxx@gmail.com",
+                    date: dateLabel,
                 },
             ],
         }, 

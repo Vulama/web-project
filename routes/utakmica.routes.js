@@ -3,6 +3,8 @@ const router = express.Router();
 
 router.get('/:id', function (req, res, next) {
     if (req.query.comm && !(req.oidc.user === undefined)){
+        var date = new Date();
+        var dateLabel = `${date.getDay()}.${date.getMonth()}.${date.getFullYear()}`;
         var id = global.data.utakmice.find (utakmica => utakmica.id == req.params.id).comments.map(com => com.id).pop()
         global.data.utakmice.find (utakmica => utakmica.id == req.params.id).comments.push(
             {
@@ -10,6 +12,7 @@ router.get('/:id', function (req, res, next) {
                 text: req.query.comm,
                 owner: req.oidc.user.nickname,
                 ownerAddress: req.oidc.user.name,
+                date: dateLabel,
             }
         );
     }
