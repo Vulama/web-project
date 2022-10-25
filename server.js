@@ -16,22 +16,10 @@ const config = {
   authRequired: false,
   auth0Logout: true,
   secret: 'a long, randomly-generated string stored in env',
-  baseURL: externalUrl || `https://localhost:${port}`,
+  baseURL: externalUrl || `http://localhost:${port}`,
   clientID: 'wqMbc1xDL6CejQZEihmbZkxaLFKdQxDI',
   issuerBaseURL: 'https://dev-8p0fwa68r7jq5z5q.us.auth0.com'
 };
-
-if (externalUrl) {
-    const hostname = '127.0.0.1';
-    app.listen(port, hostname, () => {
-    console.log(`Server locally running at http://${hostname}:${port}/ and from
-    outside on ${externalUrl}`);
-    });
-} else {
-    http.createServer(app).listen(port, function () {
-    console.log(`Server running at https://localhost:${port}/`);
-    });
-}
 
 // auth router attaches /login, /logout, and /callback routes to the baseURL
 app.use(auth(config));

@@ -38,10 +38,24 @@
             <% } else { %>
                 <div style="background-color: beige" class="utakmica">
             <% } %>
-                <h2 style="text-align: center"><%= comm %> </h2>
-                
-                </div>
+            <div>
+                <p style="float: left; margin-left: 5%;"><%= comm.owner %> </p>
+                <button type="button" style="float: right; margin-right: 5%; margin-top: 1%;" onclick=<%="deleteMsg(" + comm.id + ')' %>>delete</button>
+                <script>
+                    function deleteMsg(id){
+                        alert(id)
+                    }
+                </script>
+            </div>
+            <h2 style="text-align: center; margin-right: 10%; margin-left: 10%;"><%= comm.text %> </h2>
+            </div>
         <% } %>
+        <hr></hr>
+        <form style="text-align: center">
+            <label for="comm">Comment</label><br>
+            <input type="text" id="comm" name="comm"><br>
+            <input type="submit" value="Submit">
+        </form>
     </div>
 
 </main>

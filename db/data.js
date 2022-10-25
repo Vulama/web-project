@@ -7,7 +7,26 @@ global.data = {
             gol1: 10, 
             gol2: 0,
             played: true,
-            comments: ["abcd", "bcde", "efgh"],
+            comments: [
+                {
+                    id: 1,
+                    text: "Dinamo je najjaci",
+                    owner: "xxx",
+                    ownerAddress: "xxx@gmail.com",
+                },
+                {
+                    id: 2,
+                    text: "Ma nije",
+                    owner: "xxx",
+                    ownerAddress: "xxx@gmail.com",
+                },
+                {
+                    id: 3,
+                    text: "Jeee",
+                    owner: "xxx",
+                    ownerAddress: "xxx@gmail.com",
+                },
+            ]
         }, 
         { 
             id: 2,
@@ -16,7 +35,14 @@ global.data = {
             gol1: 1, 
             gol2: 5,
             played: true,
-            comments: [],
+            comments: [
+                {
+                    id: 1,
+                    text: "Dinamo je najjaci",
+                    owner: "xxx",
+                    ownerAddress: "xxx@gmail.com",
+                },
+            ],
         }, 
         { 
             id: 3,
@@ -34,7 +60,14 @@ global.data = {
             gol1: 11, 
             gol2: 3,
             played: true,
-            comments: [],
+            comments: [
+                {
+                    id: 1,
+                    text: "Dinamo je najjaci",
+                    owner: "xxx",
+                    ownerAddress: "xxx@gmail.com",
+                },
+            ],
         }, 
         { 
             id: 5,
