@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>Web</title>
+    <title>Utakmica</title>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/styles/main.css">
@@ -18,6 +18,10 @@
             <h1><a href="/login">Login</a></h2>
         <% } %>
     </div>
+
+    <div>
+        <h1><a href="/">Go Back</a></h2>
+    </div>
     
     <div>
         <% if (user) { %>
@@ -27,21 +31,16 @@
             <h2>Unknown</h2>
         <% } %>
         <hr></hr>
-        <% for(var utakmica of data.utakmice) { %>
-            <a style="text-decoration: none" href=<%="utakmica/" + utakmica.id %>>
-            <% if(data.utakmice.indexOf(utakmica) % 2 == 0){ %>
+        <h2 style="text-align: center"><%= utakmica.team1 + " " + utakmica.gol1 + " - " + utakmica.gol2 + " " + utakmica.team2 %> </h2>
+        <% for(var comm of utakmica.comments) { %>
+            <% if(utakmica.comments.indexOf(comm) % 2 == 0){ %>
                 <div style="background-color: aliceblue" class="utakmica">
             <% } else { %>
                 <div style="background-color: beige" class="utakmica">
             <% } %>
-                    <h2 style="text-align: center"><%= utakmica.team1 + " " + utakmica.gol1 + " - " + utakmica.gol2 + " " + utakmica.team2 %> </h2>
-                    <% if (utakmica.played) { %>  
-                        <h3 style="text-align: center">finished</h2>
-                    <% } else { %>
-                        <h3 style="text-align: center">not jet started</h2>
-                    <% } %>
+                <h2 style="text-align: center"><%= comm %> </h2>
+                
                 </div>
-            </a>
         <% } %>
     </div>
 

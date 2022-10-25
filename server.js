@@ -5,11 +5,12 @@ const app = express();
 const path = require('path');
 const { auth } = require('express-openid-connect');
 const externalUrl = process.env.RENDER_EXTERNAL_URL;
-const port = externalUrl && process.env.PORT ? parseInt(process.env.PORT) : 4080;
+const port = externalUrl && process.env.PORT ? parseInt(process.env.PORT) : 3000;
 require('./db/data')
 
 //uvoz modula s definiranom funkcionalnosti ruta
 const homeRouter = require('./routes/home.routes');
+const utakmicaRouter = require('./routes/utakmica.routes');
 
 const config = {
   authRequired: false,
@@ -47,6 +48,7 @@ app.use(express.urlencoded({ extended: true }));
 
 //definicija ruta
 app.use('/', homeRouter);
+app.use('/utakmica', utakmicaRouter)
 
 //pokretanje poslužitelja na portu 3000
 app.listen(3000);
