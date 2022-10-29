@@ -29,8 +29,8 @@ router.get('/', function (req, res, next) {
     
     resPerGame.forEach(element => {
         team = table.find(a => a.team == element[0])
-        team.score = team.score + element[2]
-        team.points = team.points + element[1]
+        team.score = parseInt(team.score) + parseInt(element[2])
+        team.points = parseInt(team.points) + parseInt(element[1])
     });
 
     table.sort((a,b) => { 
