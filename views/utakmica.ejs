@@ -23,9 +23,11 @@
             <h2>Unknown</h2>
         <% } %>
         <hr></hr>
-        <% if (user.name == "admin@proba.com") { %>
-            <a href=<%='/scoreedit/'+ utakmica.id  %>   style="float: right; margin-right: 5%; margin-top: 1%;">Edit</a>
-        <% } %>
+        <% if (!(user === undefined)) { %>
+            <% if (user.name == "admin@proba.com") { %>
+                <a href=<%='/scoreedit/'+ utakmica.id  %> style="float: right; margin-right: 5%; margin-top: 1%;">Edit</a>
+        <% }} %>
+
         <h2 style="text-align: center; margin-left: 5%;"><%= utakmica.team1 + " " + utakmica.gol1 + " - " + utakmica.gol2 + " " + utakmica.team2 %> </h2>
         <% for(var comm of utakmica.comments) { %>
             <% if(utakmica.comments.indexOf(comm) % 2 == 0){ %>
@@ -38,10 +40,11 @@
                 <p><%= comm.date %> </p>
             </div>
 
-            <% if (user.name == comm.ownerAddress || user.name == "admin@proba.com") { %>
+            <% if (!(user === undefined)) { %>
+                <% if (user.name == comm.ownerAddress || user.name == "admin@proba.com") { %>
                 <a href=<%='/utakmica/'+ utakmica.id + "?del=" +  comm.id %>   style="float: right; margin-right: 5%; margin-top: 1%;">Delete</a>
                 <a href=<%='/edit/'+ utakmica.id + "/" +  comm.id %>   style="float: right; margin-right: 1%; margin-top: 1%;">Edit</a>
-            <% } %>
+            <% } } %>
             <h2 style="text-align: start; margin-right: 10%; margin-left: 15%;"><%= comm.text %> </h2>
             
             </div>
