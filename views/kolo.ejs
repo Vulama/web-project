@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Edit komentara</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="/styles/main.css">
+</head>
+
+<body class="content">
+
+<main class="main">
+    <div>
+        <h2><a href="/">Go Back</a></h2>
+    </div>
+    
+    <div>
+        <% if (user) { %>
+            <h2><%= user.name %></h2>
+            <h2><%= user.nickname %></h2>
+        <% } else { %>
+            <h2>Unknown</h2>
+        <% } %>
+        <hr></hr>
+
+        <h2 style="text-align: center"><%= kolo.id + ". kolo" %> </h2>
+        <% for(var comm of kolo.comments) { %>
+            <% if(kolo.comments.indexOf(comm) % 2 == 0){ %>
+                <div style="background-color: aliceblue" class="utakmica">
+            <% } else { %>
+                <div style="background-color: beige" class="utakmica">
+            <% } %>
+            <div class="column">
+                <p><%= comm.owner %> </p>
+                <p><%= comm.date %> </p>
+            </div>
+
+            <% if (!(user === undefined)) { %>
+                <% if (user.name == comm.ownerAddress || user.name == "admin@proba.com") { %>
+                <a href=<%='/kolo/'+ kolo.id + "?del=" +  comm.id %>   style="float: right; margin-right: 5%; margin-top: 1%;">Delete</a>
+                <% } if (user.name == comm.ownerAddress) { %>
+                <a href=<%='/koloedit/'+ kolo.id + "/" +  comm.id %>   style="float: right; margin-right: 1%; margin-top: 1%;">Edit</a>
+            <% } } %>
+            <h2 style="text-align: start; margin-right: 10%; margin-left: 15%;"><%= comm.text %> </h2>
+            
+            </div>
+        <% } %>
+        <hr></hr>
+        <form style="text-align: center">
+            <label for="comm">Comment</label><br>
+            <input type="text" id="comm" name="comm"><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+
+</main>
+
+</body>
+
+</html>

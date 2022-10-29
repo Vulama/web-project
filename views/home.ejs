@@ -46,20 +46,25 @@
         <br></br>
         <hr></hr>
         <% for(var utakmica of data.utakmice) { %>
-            <a style="text-decoration: none" href=<%="utakmica/" + utakmica.id %>>
             <% if(data.utakmice.indexOf(utakmica) % 2 == 0){ %>
                 <div style="background-color: aliceblue" class="utakmica">
             <% } else { %>
                 <div style="background-color: beige" class="utakmica">
             <% } %>
-                    <h2 style="text-align: center"><%= utakmica.team1 + " " + utakmica.gol1 + " - " + utakmica.gol2 + " " + utakmica.team2 %> </h2>
-                    <% if (utakmica.played) { %>  
-                        <h3 style="text-align: center">finished</h2>
-                    <% } else { %>
-                        <h3 style="text-align: center">not yet started</h2>
-                    <% } %>
+                    <div class="column">
+                        <p ><%= utakmica.date %></p>
+                        <% if (utakmica.played) { %>  
+                            <h3>finished</h2>
+                        <% } else { %>
+                            <h3>not yet started</h2>
+                        <% } %>
+                    </div>
+                    <a style="float: right; margin-right: 5%; margin-top: 1%;" href=<%= "/kolo/" + utakmica.kolo %>><%= utakmica.kolo + ". kolo" %></a>
+                    <a style="text-decoration: none" href=<%="utakmica/" + utakmica.id %>>
+                        <h2 style="text-align: center;"><%= utakmica.team1 + " " + utakmica.gol1 + " - " + utakmica.gol2 + " " + utakmica.team2 %> </h2>
+                    </a>
+                    
                 </div>
-            </a>
         <% } %>
     </div>
 

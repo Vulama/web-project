@@ -13,6 +13,8 @@ const homeRouter = require('./routes/home.routes');
 const utakmicaRouter = require('./routes/utakmica.routes');
 const editRouter = require('./routes/edit.routes');
 const scoreEditRouter = require('./routes/score_edit.routes');
+const koloRouter = require('./routes/kolo.routes');
+const koloEditRouter = require('./routes/kolo_edit.routes');
 
 const config = {
   authRequired: false,
@@ -41,6 +43,8 @@ app.use('/', homeRouter);
 app.use('/utakmica', utakmicaRouter)
 app.use('/edit', editRouter)
 app.use('/scoreedit', scoreEditRouter)
+app.use('/kolo', koloRouter)
+app.use('/koloedit', koloEditRouter)
 
 //pokretanje poslužitelja na portu 3000
 app.listen(3000);

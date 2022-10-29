@@ -9,6 +9,7 @@ h1 {
 }
 
 .column {
+    width: 10%;
     float: left;
     margin-left: 5%;
   }
