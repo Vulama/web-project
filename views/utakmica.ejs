@@ -43,6 +43,7 @@
             <% if (!(user === undefined)) { %>
                 <% if (user.name == comm.ownerAddress || user.name == "admin@proba.com") { %>
                 <a href=<%='/utakmica/'+ utakmica.id + "?del=" +  comm.id %>   style="float: right; margin-right: 5%; margin-top: 1%;">Delete</a>
+                <% } if (user.name == comm.ownerAddress) { %>
                 <a href=<%='/edit/'+ utakmica.id + "/" +  comm.id %>   style="float: right; margin-right: 1%; margin-top: 1%;">Edit</a>
             <% } } %>
             <h2 style="text-align: start; margin-right: 10%; margin-left: 15%;"><%= comm.text %> </h2>
