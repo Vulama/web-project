@@ -11,6 +11,8 @@ require('./db/data')
 //uvoz modula s definiranom funkcionalnosti ruta
 const homeRouter = require('./routes/home.routes');
 const utakmicaRouter = require('./routes/utakmica.routes');
+const editRouter = require('./routes/edit.routes');
+const scoreEditRouter = require('./routes/score_edit.routes');
 
 const config = {
   authRequired: false,
@@ -37,6 +39,8 @@ app.use(express.urlencoded({ extended: true }));
 //definicija ruta
 app.use('/', homeRouter);
 app.use('/utakmica', utakmicaRouter)
+app.use('/edit', editRouter)
+app.use('/scoreedit', scoreEditRouter)
 
 //pokretanje poslužitelja na portu 3000
 app.listen(3000);

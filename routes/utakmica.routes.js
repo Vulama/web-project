@@ -16,6 +16,7 @@ router.get('/:id', function (req, res, next) {
             }
         );
     }
+
     if (req.query.del && !(req.oidc.user === undefined)){
         var com = global.data.utakmice.find (utakmica => utakmica.id == req.params.id).comments.find(com => com.id.toString() == req.query.del)
         if(com.ownerAddress == req.oidc.user.name || req.oidc.user.name == "admin@proba.com"){
@@ -25,6 +26,7 @@ router.get('/:id', function (req, res, next) {
             }
         }
     }
+    
     res.render('utakmica', {
         user: req.oidc.user,
         utakmica: global.data.utakmice.find (utakmica => utakmica.id == req.params.id),

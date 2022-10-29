@@ -27,6 +27,24 @@
             <h2>Unknown</h2>
         <% } %>
         <hr></hr>
+        <br></br>
+        <h2 style="text-align: center;">Table results</h2>
+        <table style="width:40%; text-align: center;" class="center">
+            <tr>
+              <th>Name</th>
+              <th>Points</th>
+              <th>Score</th>
+            </tr>
+            <% for(var row of table) { %>
+                <tr>
+                <td><%= row.team %></td>
+                <td><%= row.points %></td>
+                <td><%= row.score %></td>
+                </tr>
+            <% } %>
+        </table>
+        <br></br>
+        <hr></hr>
         <% for(var utakmica of data.utakmice) { %>
             <a style="text-decoration: none" href=<%="utakmica/" + utakmica.id %>>
             <% if(data.utakmice.indexOf(utakmica) % 2 == 0){ %>
