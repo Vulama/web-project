@@ -19,7 +19,7 @@
         <% if (user) { %>
             <h2 style="padding-top: 1.5%; margin-left: 2%; margin-bottom: 2%;"><%="User: " + user.nickname  + " (" + user.name + ")" %></h2>
         <% } else { %>
-            <br></br>
+            <br></br><br></br>
         <% } %>
         <hr></hr>
         <% if (!(user === undefined)) { %>
@@ -52,10 +52,12 @@
         <% } %>
         <br></br>
         <hr></hr>
-        <form style="text-align: center">
-            <input type="text" id="comm" name="comm"><br>
-            <input type="submit" value="Comment">
-        </form>
+        <% if (!(user === undefined)) { %>
+            <form style="text-align: center">
+                <input type="text" id="comm" name="comm"><br>
+                <input type="submit" value="Comment">
+            </form>
+        <% } %>
     </div>
 
 </main>
