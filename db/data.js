@@ -1,5 +1,5 @@
 var date = new Date();
-var dateLabel = `${date.getDay()-1}.${date.getMonth()}.${date.getFullYear()}`
+var dateLabel = date.toLocaleDateString("hr-HR");
 
 global.data = { 
     kola:[
@@ -42,8 +42,8 @@ global.data = {
         { 
             id: 1,
             date: dateLabel,
-            team1: "dinamo", 
-            team2: "hajduk", 
+            team1: "Dinamo", 
+            team2: "Hajduk", 
             gol1: 5, 
             gol2: 5,
             played: true,
@@ -75,8 +75,8 @@ global.data = {
         { 
             id: 2,
             date: dateLabel,
-            team1: "rijeka", 
-            team2: "osijek", 
+            team1: "Rijeka", 
+            team2: "Osijek", 
             gol1: 1, 
             gol2: 5,
             played: true,
@@ -94,8 +94,8 @@ global.data = {
         { 
             id: 3,
             date: dateLabel,
-            team1: "dinamo", 
-            team2: "rijeka", 
+            team1: "Dinamo", 
+            team2: "Rijeka", 
             gol1: 3, 
             gol2: 1,
             played: true,
@@ -105,8 +105,8 @@ global.data = {
         { 
             id: 4,
             date: dateLabel,
-            team1: "osijek", 
-            team2: "hajduk", 
+            team1: "Osijek", 
+            team2: "Hajduk", 
             gol1: 1, 
             gol2: 1,
             played: true,
@@ -124,8 +124,8 @@ global.data = {
         { 
             id: 5,
             date: "",
-            team1: "dinamo", 
-            team2: "osijek", 
+            team1: "Dinamo", 
+            team2: "Osijek", 
             gol1: 0, 
             gol2: 0,
             played: false,
@@ -135,8 +135,8 @@ global.data = {
         { 
             id: 6,
             date: "",
-            team1: "hajduk", 
-            team2: "rijeka", 
+            team1: "Hajduk", 
+            team2: "Rijeka", 
             gol1: 0, 
             gol2: 0,
             played: false,

@@ -4,7 +4,7 @@ const router = express.Router();
 router.get('/:id', function (req, res, next) {
     if (req.query.comm && !(req.oidc.user === undefined)){
         var date = new Date();
-        var dateLabel = `${date.getDay()}.${date.getMonth()}.${date.getFullYear()}`;
+        var dateLabel = date.toLocaleDateString("hr-HR");
         var id = global.data.kola.find (kolo => kolo.id == req.params.id).comments.map(com => com.id).pop()
         global.data.kola.find (kolo => kolo.id == req.params.id).comments.push(
             {

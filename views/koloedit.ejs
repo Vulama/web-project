@@ -11,15 +11,16 @@
 <body class="content">
 
 <main class="main">
-    <div>
-        <h2><a href=<%= "/kolo/" + kolo.id %>>Go Back</a></h2>
-    </div>
+  
+    <h2 class="login" style="margin-right: 5%;"><a href=<%= "/kolo/" + kolo.id %>>Go Back</a></h2>
+    <h2 style="float: left; margin-left: 5%">Round comment edit</h2>
+
+    <br></br>
     
     <div>
-        <h2>Izmjena komentara</h2>
-        <h3 style="text-align: center"><%= comment.text %></h3>
+        <hr style="margin-top: 2%"></hr>
+        <h2 style="text-align: center;"><%= "Current comment: " + comment.text %></h2>
         <form style="text-align: center">
-            <label for="comm">Novi komentar</label><br>
             <input type="text" id="comm" name="comm"><br>
             <input type="submit" value="Submit">
         </form>

@@ -4,7 +4,7 @@ const router = express.Router();
 router.get('/:id', function (req, res, next) {
     if (req.query.t1 && req.query.t2 && req.oidc.user.name == "admin@proba.com"){
         var date = new Date();
-        var dateLabel = `${date.getDay()}.${date.getMonth()}.${date.getFullYear()}`
+        var dateLabel = date.toLocaleDateString("hr-HR");   
         var utakmica = global.data.utakmice.find (utakmica => utakmica.id == req.params.id)
         utakmica.gol1 = req.query.t1
         utakmica.gol2 = req.query.t2

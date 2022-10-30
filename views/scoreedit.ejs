@@ -11,22 +11,24 @@
 <body class="content">
 
 <main class="main">
-    <div>
-        <h2><a href=<%= "/utakmica/" + utakmica.id %>>Go Back</a></h2>
-    </div>
+
+    <h2 class="login" style="margin-right: 5%;"><a href=<%= "/utakmica/" + utakmica.id %>>Go Back</a></h2>
+    <h2 style="float: left; margin-left: 5%">Game score edit</h2>
+
+    <br></br>
     
     <div>
-        <h2>Izmjena rezultata</h2>
-        <h2 style="text-align: center;"><%= utakmica.team1 + " " + utakmica.gol1 + " - " + utakmica.gol2 + " " + utakmica.team2 %> </h2>
-        <form style="text-align: center">
-            <label for="t1"><%= "rezultat za:  " + utakmica.team1 %></label><br>
-            <input type="number" id="t1" name="t1"><br>
-            <br></br>
-            <label for="t2"><%= "rezultat za:  " + utakmica.team2 %></label><br>
-            <input type="number" id="t2" name="t2"><br>
-            <br></br>
-            <input type="submit" value="Submit">
-        </form>
+        <h1 style="text-align: center; margin-top: 2%;"><%= utakmica.team1 + " " + utakmica.gol1 + " - " + utakmica.gol2 + " " + utakmica.team2 %> </h1>
+        <div>
+            <hr></hr>
+            <form style="text-align: center">
+                <label for="t1"><%= "Score for:  " + utakmica.team1 %></label><br>
+                <input type="number" id="t1" name="t1"><br>
+                <label for="t2"><%= "Score for:  " + utakmica.team2 %></label><br>
+                <input type="number" id="t2" name="t2"><br>
+                <input type="submit" value="Enter results">
+            </form>
+        </div>
     </div>
 
 </main>

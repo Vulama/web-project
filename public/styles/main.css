@@ -6,19 +6,64 @@ h1 {
     padding-top: 0.2%;
     padding-bottom:  1%;
     margin-bottom: 0.5%;
+    margin-left: 10%;
+    margin-right: 10%;
+    border-radius: 25px;
+    border:1px solid dimgrey;
 }
 
 .column {
-    width: 10%;
-    float: left;
-    margin-left: 5%;
-  }
+  width: 10%;
+  float: left;
+  margin-left: 3%;
+}
 
-  table, th, td {
-    border:1px solid black;
-  }
+table {
+  border:1px solid black;
+  border-radius: 10px;
+}
 
-  .center {
-    margin-left: auto;
-    margin-right: auto;
-  }
+th, td {
+  text-align: left;
+  padding: 8px;
+  padding-left: 3%;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+.center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login{
+  float: right;
+  margin-right: 2%;
+}
+
+input[type=text] {
+  margin-top: 0.5%;
+  padding: 0.5%;
+  border: 1px solid dimgray;
+  border-radius: 10px;
+  width: 75%;
+  font-size: larger;
+}
+
+input[type=submit] {
+  margin-top: 0.5%;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 10%;
+  height: 2%;
+  font-size: large;
+}
+
+input[type=number] {
+  margin-bottom: 0.5%;
+  padding-left: 0.5%;
+  border: 1px solid black;
+  border-radius: 10px;
+  width: 5%;
+  font-size: larger;
+}
